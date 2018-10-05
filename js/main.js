@@ -14,9 +14,9 @@ function getItems (username) {
                         <img src="${element.actor.avatar_url}">
 
                         <span>
-                            <a class="link" href="${element.actor.url}" target="_blank">${element.actor.display_login}</a>
+                            <a class="link" href="https://github.com/${element.actor.display_login}" target="_blank">${element.actor.display_login}</a>
                             ${getEventType(element.type, element.payload)} 
-                            <a class="link" href="${element.repo.url}" target="_blank">${element.repo.name}</a>
+                            <a class="link" href="https://github.com/${element.repo.name}" target="_blank">${element.repo.name}</a>
                         </span>
                     </div>
 
