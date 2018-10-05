@@ -45,6 +45,8 @@ function getEventType (type, payload) {
         case 'PublicEvent':
             event = 'made public'
             break;
+        case 'CreateEvent':
+            event = 'created a repository'    
         default:
             event = '';
     } 
