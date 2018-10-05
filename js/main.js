@@ -35,6 +35,8 @@ function getItems (username) {
 
 function getEventType (type, payload) {
     let event = '';
+    console.log(type);
+    
     switch(type) {
         case 'WatchEvent':
             event = 'starred'
@@ -46,7 +48,8 @@ function getEventType (type, payload) {
             event = 'made public'
             break;
         case 'CreateEvent':
-            event = 'created a repository'    
+            event = 'created a repository'
+            break;   
         default:
             event = '';
     } 
