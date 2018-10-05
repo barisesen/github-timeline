@@ -35,7 +35,6 @@ function getItems (username) {
 
 function getEventType (type, payload) {
     let event = '';
-    console.log(type);
     
     switch(type) {
         case 'WatchEvent':
