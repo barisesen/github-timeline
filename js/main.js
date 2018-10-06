@@ -1,4 +1,4 @@
-dayjs.extend(dayjs_plugin_relativeTime);
+dayjs.extend(dayjs_plugin_relativeTime)
 let page = 1
 
 function getItems (username) {
@@ -15,7 +15,7 @@ function getItems (username) {
 
                         <span>
                             <a class="link" href="https://github.com/${element.actor.display_login}" target="_blank">${element.actor.display_login}</a>
-                            ${getEventType(element.type, element.payload)} 
+                            ${getEventType(element.type, element.payload)}
                             <a class="link" href="https://github.com/${element.repo.name}" target="_blank">${element.repo.name}</a>
                         </span>
                     </div>
@@ -28,43 +28,43 @@ function getItems (username) {
             })
 
             page = page + 1
-            
+
         })
         .catch(reason => console.log(reason.message))
 }
 
 function getEventType (type, payload) {
-    let event = '';
-    
+    let event = ''
+
     switch(type) {
         case 'WatchEvent':
             event = 'starred'
-            break;
+            break
         case 'ForkEvent':
             event = `forked <a href="${payload.forkee.html_url}" class="link">${payload.forkee.full_name}</a> from `
-            break;
+            break
         case 'PublicEvent':
             event = 'made public'
-            break;
+            break
         case 'CreateEvent':
             event = 'created a repository'
-            break;   
+            break
         default:
-            event = '';
-    } 
-    return event; 
+            event = ''
+    }
+    return event
 }
 
 
-$('#get-timeline').click((e) => {
+$('#get-timeline').click(e => {
     e.preventDefault()
 
     let username = $('#username').val().trim()
     page = 1
-    
+
     $('.items').html(`<h2 class="align-items-center timeline">@${username}'s Timeline</h2>`)
     $('.load-more').removeClass('d-none')
-    getItems(username);
+    getItems(username)
 })
 
 $('#load-more').click((e) => {
@@ -76,7 +76,7 @@ $('#load-more').click((e) => {
 
 async function fetchAsync (username, page = 1) {
     $('.loader').css('display', 'block')
-    
+
     let response = await fetch(`https://api.github.com/users/${username}/received_events?page=${page}`)
     let data = await response.json()
     return data
