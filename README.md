@@ -1,6 +1,6 @@
-# Get Github Timeline
+# Get GitHub Timeline
 
-## Want to see the Github timeline of other users?
+## Want to see the GitHub timeline of other users?
 
 You can see the whole timeline, just by typing in the user name!
 
@@ -9,4 +9,4 @@ You can see the whole timeline, just by typing in the user name!
 
 
 
-![](/images/github-timeline.png "Github Timeline")
+![](/images/github-timeline.png "GitHub Timeline")
