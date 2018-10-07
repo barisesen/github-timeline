@@ -49,6 +49,9 @@ function getEventType (type, payload) {
         case 'CreateEvent':
             event = 'created a repository'
             break
+        case 'FollowEvent':
+            event = 'started following'
+            break
         default:
             event = ''
     }
