@@ -49,6 +49,9 @@ function getEventType (type, payload) {
         case 'CreateEvent':
             event = 'created a repository'
             break
+        case 'PullRequestEvent':
+            event = 'opened a pull request in'
+            break
         default:
             event = ''
     }
