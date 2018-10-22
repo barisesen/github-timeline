@@ -58,16 +58,29 @@ function getEventType (type, payload) {
     return event
 }
 
+function addUsernameToSearchParams(username) {
+    const url = new URL(document.location.href)
+    const params = new URLSearchParams(url.search)
+    params.set('username', username)
+    window.history.pushState({}, "", decodeURIComponent(`${location.pathname}?${params}`))
+}
+
+function getTimeline(username) {
+    page = 1
+
+    addUsernameToSearchParams(username)
+
+    $('.items').html(`<h2 class="align-items-center timeline">@${username}'s Timeline</h2>`)
+    $('.load-more').removeClass('d-none')
+    getItems(username)
+}
 
 $('#get-timeline').click(e => {
     e.preventDefault()
 
     let username = $('#username').val().trim()
-    page = 1
-
-    $('.items').html(`<h2 class="align-items-center timeline">@${username}'s Timeline</h2>`)
-    $('.load-more').removeClass('d-none')
-    getItems(username)
+    
+    getTimeline(username)
 })
 
 $('#load-more').click((e) => {
@@ -84,3 +97,15 @@ async function fetchAsync (username, page = 1) {
     let data = await response.json()
     return data
 }
+
+function main() {
+    const params = new URLSearchParams(location.search)
+    const username = params.get('username')
+
+    if (username) {
+        $('#username').val(username)
+        getTimeline(username)
+    }
+}
+
+main()
