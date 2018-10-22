@@ -3,6 +3,7 @@ let page = 1
 
 function getItems (username) {
     fetchAsync(username, page)
+        .then(filterUselessEvents)
         .then(data => {
             $('.loader').css('display', 'none')
             $('.timeline').css('display', 'block')
@@ -56,6 +57,10 @@ function getEventType (type, payload) {
             event = ''
     }
     return event
+}
+
+function filterUselessEvents(events) {
+    return events.filter(element => element.type !== 'MemberEvent')
 }
 
 function addUsernameToSearchParams(username) {
