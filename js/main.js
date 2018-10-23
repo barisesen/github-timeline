@@ -9,7 +9,6 @@ function getItems (username) {
             $('.timeline').css('display', 'block')
 
             data.forEach(element => {
-                console.log(element);
                 $('.items').append(`
                 <div class="row item-row">
                     <div class="col-md-9 d-flex align-self-center">
