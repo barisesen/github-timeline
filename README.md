@@ -9,11 +9,8 @@ You do not need to log in to use the application. Just type the user name you wa
 ![](/images/github-timeline.gif)
 
 
-[https://able8.github.io/github-events](https://able8.github.io/github-events)
+events: [https://able8.github.io/github-events](https://able8.github.io/github-events)
 
-[https://githubtimeline.xyz/](https://githubtimeline.xyz)
-
-
-
+timeline: [https://githubtimeline.xyz/](https://githubtimeline.xyz)
 
 ![](/images/github-timeline.png "GitHub Timeline")
