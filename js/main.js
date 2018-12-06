@@ -55,10 +55,13 @@ function getEventType (type, payload) {
             break
         case 'PushEvent':
             event = 'pushed a commit'
-            break;
+            break
         case 'IssueCommentEvent':
             event = 'commented an issue'
-            break;
+            break
+        case 'CommitCommentEvent':
+            event = 'commented a commit'
+            break
         default:
             event = ''
     }
