@@ -84,7 +84,8 @@ function getTimeline(username) {
 
     addUsernameToSearchParams(username)
 
-    $('.items').html(`<h2 class="align-items-center timeline">@${username}'s Timeline</h2>`)
+    $('.items').html(`<h2 class="align-items-center timeline">@${username}'s
+    Events</h2>`)
     $('.load-more').removeClass('d-none')
     getItems(username)
 }
@@ -107,7 +108,9 @@ $('#load-more').click((e) => {
 async function fetchAsync (username, page = 1) {
     $('.loader').css('display', 'block')
 
-    let response = await fetch(`https://api.github.com/users/${username}/received_events?page=${page}`)
+    // let response = await fetch(`https://api.github.com/users/${username}/received_events?page=${page}`)
+    let response = await fetch(`https://api.github.com/users/${username}/events?page=${page}`)
+    // let response = await fetch(`https://api.github.com/events?page=${page}`)
     let data = await response.json()
     return data
 }
