@@ -62,6 +62,9 @@ function getEventType (type, payload) {
         case 'CommitCommentEvent':
             event = 'commented a commit'
             break
+        case 'IssuesEvent':
+            event = 'closed an issue'
+            break
         default:
             event = ''
     }
