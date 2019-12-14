@@ -9,7 +9,7 @@ You do not need to log in to use the application. Just type the user name you wa
 ![](/images/github-timeline.gif)
 
 
-[https://githubtimeline.xyz/](https://githubtimeline.xyz)
+[https://barisesen.github.io/github-timeline/](https://barisesen.github.io/github-timeline/)
 
 
 
